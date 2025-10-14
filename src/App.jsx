@@ -6,28 +6,30 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  const[title,setTitle] = useState('')
+  const mudandoDeTitulo =(e) =>{
+    setTitle(e.title.value)
+  }
+  const[dataNas,setDataNas] = useState('')
+  const mudandoDeData =(e) =>{
+    setTitle(e.dataNas.value)
+  }
+  const[telefone,setTelefone] = useState('')
+  const mudandoDeTelefone =(e) =>{
+    setTitle(e.telefone.value)
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='form'>
+      <label htmlFor='tituloid'>Nome </label>
+      <input id='tituloid' type='text' name='Titulo' onChange={(e) => mudandoDeTitulo(e)}></input>
+
+      <label htmlFor='dataid'>Idade</label>
+      <input id='dataid' type='date' name='Data' onChange={(e) => mudandoDeData(e)}></input>
+
+      <label htmlFor='telefoneid'>Telefone</label>
+      <input id='telefoneid' type='nunber' name='Telefone' onChange={(e) => mudandoDeTelefone(e)}></input>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
