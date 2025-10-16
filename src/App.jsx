@@ -18,6 +18,16 @@ function App() {
   const mudandoDeTelefone =(e) =>{
     setTitle(e.telefone.value)
   }
+
+  const[instagram,setInstagram] = useState('')
+  const mudandoDeInstagram =(e) =>{
+    setTitle(e.instagram.value)
+  }
+
+  const[GitHub,setGitHub] = useState('')
+  const mudandoDeGitHub =(e) =>{
+    setTitle(e.GitHub.value)
+  }
   return (
     <>
     <div className='form'>
@@ -28,7 +38,14 @@ function App() {
       <input id='dataid' type='date' name='Data' onChange={(e) => mudandoDeData(e)}></input>
 
       <label htmlFor='telefoneid'>Telefone</label>
-      <input id='telefoneid' type='nunber' name='Telefone' onChange={(e) => mudandoDeTelefone(e)}></input>
+      <input id='telefoneid' type='number' name='Telefone' onChange={(e) => mudandoDeTelefone(e)}></input>
+
+      
+      <label htmlFor='instagramId'>Instagran</label>
+      <input id='instagramId' type='text' name='Instagram' onChange={(e) => mudandoDeInstagram(e)}></input>
+      
+      <label htmlFor='GitHubId'>GitHub</label>
+      <input id='GitHubId' type='text' name='GitHub' onChange={(e) => mudandoDeGitHub(e)}></input>
       </div>
     </>
   )
