@@ -21,7 +21,8 @@
 
 .form{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 50px;
 }
 @keyframes logo-spin {
   from {
