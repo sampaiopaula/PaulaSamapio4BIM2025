@@ -18,12 +18,29 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-
-.form{
+.formulario{
   display: flex;
   flex-direction: row;
-  padding: 50px;
+  gap: 15px;
 }
+.Form{
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: rgb(105, 120, 150);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  border: solid 5px rgb(0, 57, 86);
+  border-radius: 2px;
+}
+
+.caixa{
+ width: 250px;
+  height: 30px;
+  background-color: rgb(57, 57, 57);
+  border: solid 3px rgb(0, 39, 68);
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

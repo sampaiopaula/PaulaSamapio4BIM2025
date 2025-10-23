@@ -72,66 +72,97 @@ function App() {
   }
   return (
     <>
-    <div className='form'>
+    <div className='Form'>
+    <div className='formulario'>
 
    <div>
+    <div style={{margin:"10px"}}>
       <label htmlFor='tituloid'>Nome </label>
-      <input id='tituloid' type='text' name='Titulo' onChange={(e) => mudandoDeTitulo(e)}></input>
+      <input className='caixa' id='tituloid' type='text' name='Titulo'placeholder="Digite seu nome completo" onChange={(e) => mudandoDeTitulo(e)}></input>
+  </div>
 
+    <div style={{margin:"10px"}}>
       <label htmlFor='dataid'>Idade</label>
-      <input id='dataid' type='date' name='Data' onChange={(e) => mudandoDeData(e)}></input>
+      <input className='caixa' id='dataid' type='date' name='Data' onChange={(e) => mudandoDeData(e)}></input>
+      </div>
 
+    <div style={{margin:"10px"}}>
       <label htmlFor='telefoneid'>Telefone</label>
-      <input id='telefoneid' type='number' name='Telefone' onChange={(e) => mudandoDeTelefone(e)}></input>
-
-      <label htmlFor='instagramId'>Instagran</label>
-      <input id='instagramId' type='text' name='Instagram' onChange={(e) => mudandoDeInstagram(e)}></input>
+      <input  className='caixa' id='telefoneid' type='number' name='Telefone' placeholder="Ex: 319666666" onChange={(e) => mudandoDeTelefone(e)}></input>
     </div>
+
+    <div style={{margin:"10px"}}>       
+      <label htmlFor='instagramId'>Instagran</label>
+      <input className='caixa' id='instagramId' type='text' name='Instagram' placeholder="@exemplo_20"  onChange={(e) => mudandoDeInstagram(e)}></input>
+    </div>  
+    </div>  
 
 
     <div> 
+      <div style={{margin:"10px"}}>
       <label htmlFor='GitHubId'>GitHub</label>
-      <input id='GitHubId' type='text' name='GitHub' onChange={(e) => mudandoDeGitHub(e)}></input>
+      <input  className='caixa' id='GitHubId' type='text' name='GitHub' placeholder="Ex: github.com/paulasampaio" onChange={(e) => mudandoDeGitHub(e)}></input>
+      </div>
 
+      <div style={{margin:"10px"}}>
       <label htmlFor='PensamentoId'>Pensamento</label>
-      <input id='pensamnetoId' type='text' name='Pensamento' onChange={(e) => mudandoDePensamento(e)}></input>
+      <input className='caixa' id='pensamnetoId' type='text' name='Pensamento' placeholder='Ex:A vida e tão bela' onChange={(e) => mudandoDePensamento(e)}></input>
+    </div>
 
+    <div style={{margin:"10px"}}>
       <label htmlFor='ProbleminhaId'>Probleminha</label>
-      <input id='ProbleminhaId' type='text' name='Probleminha' onChange={(e) => mudandoDeProbleminha(e)}></input>
+      <input className='caixa' id='ProbleminhaId' type='text' name='Probleminha'placeholder='Ex: Meu celular quebrou ' onChange={(e) => mudandoDeProbleminha(e)}></input>
+      </div>
 
+    <div style={{margin:"10px"}}>
       <label htmlFor='UltimaSerieId'>Ultima Serie</label>
-      <input id='UltimaSerie' type='text' name='UltimaSerie' onChange={(e) => mudandoDeUltimaSerie (e)}></input>
+      <input className='caixa' id='UltimaSerie' type='text' name='UltimaSerie' placeholder='Ex:Station 19' onChange={(e) => mudandoDeUltimaSerie (e)}></input>
+    </div>
     </div>
 
 
-      <div>
-        <div style={{margin:"10px"}}>
+<div>
+
+    <div style={{margin:"10px"}}>
       <label htmlFor='UltimoJogoId'>Ultimo Jogo</label>
-      <input id='UltimoJogoId' type='text' name='UltimoJogo' onChange={(e) => mudandoDeUltimoJogo (e)}></input>
-        </div>
-      <div style={{margin:"10px"}}>
+      <input className='caixa' id='UltimoJogoId' type='text' name='UltimoJogo'  placeholder='Ex:Minecraft' onChange={(e) => mudandoDeUltimoJogo (e)}></input>
+    </div>
+
+     <div style={{margin:"10px"}}>
       <label htmlFor='Musica'>Musica</label>
-      <input id='Musica' type='text' name='Musica' onChange={(e) => mudandoDeMusica (e)}></input>
-</div>
-      <div style={{margin:"10px"}}>
+      <input className='caixa' id='Musica' type='text' name='Musica'  placeholder='Ex:Digno' onChange={(e) => mudandoDeMusica (e)}></input>
+    </div>
+
+    <div style={{margin:"10px"}}>
       <label htmlFor='GeneroId'>Genero</label>
-      <input id='GeneroId' type='text' name='Genero' onChange={(e) => mudandoDeGenero (e)}></input>
-</div>
-<div style={{margin:"10px"}}>
+      <select className='caixa'id='GeneroId'name='Genero' onChange={(e) => mudandoDeGenero(e)}>
+    <option value="">Selecione...</option> <option value="feminino">Feminino</option> <option value="masculino">Masculino</option>
+  </select>
+    </div>
+
+    <div style={{margin:"10px"}}>
       <label htmlFor='HabilidadeEspecialId'>Habilidade Especial</label>
-      <input id='HabilidadeEspecialId' type='text' name='HabilidadeEspecial' onChange={(e) => mudandoDeHabilidadeEspecial (e)}></input>
+      <input className='caixa' id='HabilidadeEspecialId' type='text' name='HabilidadeEspecial'  placeholder='Ex:Editar videos,Volei etc;' onChange={(e) => mudandoDeHabilidadeEspecial (e)}></input>
   </div>
-  </div>
+
+</div>
 
     <div>
+      <div style={{margin:"10px"}}>
       <label htmlFor='PoderEspecialId'>Poder Especial</label>
-      <input id='PoderEspecialId' type='text' name='PoderEspecial' onChange={(e) => mudandoDePoderEspecial (e)}></input>
-
-      <label htmlFor='TimequeTorceId'>Time que Torce </label>
-      <input id='TimequeTorceId' type='text' name='timequeTorce' onChange={(e) => mudandoDetime (e)}></input>
+      <input className='caixa' id='PoderEspecialId' type='text' name='PoderEspecial' placeholder='Ex:' onChange={(e) => mudandoDePoderEspecial (e)}></input>
     </div>
 
-      </div>
+    <div style={{margin:"10px"}}> 
+      <label htmlFor='TimequeTorceId'>Time que Torce </label>
+      <input className='caixa' id='TimequeTorceId' type='text' name='timequeTorce'  placeholder='Ex:Cruzeiro, Flamengo,Etc; 'onChange={(e) => mudandoDetime (e)}></input>
+    </div>
+    </div>
+
+
+    </div>
+    <button style={{margin:"20px"}}>Enviar</button>
+    </div>  
     </>
   )
 }
