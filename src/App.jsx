@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -6,72 +6,111 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const[title,setTitle] = useState('')
+  const[Title                                                                                                                                                                                                                                                                                  
+    ,setTitle] = useState('')
   const mudandoDeTitulo =(e) =>{
     setTitle(e.title.value)
   }
-  const[dataNas,setDataNas] = useState('')
+  const[DataNas,setDataNas] = useState('')
   const mudandoDeData =(e) =>{
-    setTitle(e.dataNas.value)
+    setDataNas(e.dataNas.value)
   }
-  const[telefone,setTelefone] = useState('')
+  const[Telefone,setTelefone] = useState('')
   const mudandoDeTelefone =(e) =>{
-    setTitle(e.telefone.value)
+    setTelefone(e.telefone.value)
   }
 
-  const[instagram,setInstagram] = useState('')
+  const[Instagram,setInstagram] = useState('')
   const mudandoDeInstagram =(e) =>{
-    setTitle(e.instagram.value)
+    setInstagram(e.instagram.value)
   }
 
   const[GitHub,setGitHub] = useState('')
   const mudandoDeGitHub =(e) =>{
-    setTitle(e.GitHub.value)
+    setGitHub(e.GitHub.value)
   }
-  const[pensamento,setPensamento] = useState('')
+  const[Pensamento,setPensamento] = useState('')
   const mudandoDePensamento =(e) =>{
-    setTitle(e.pensamento.value)
+    setPensamento(e.pensamento.value)
   }
 
-  const[probleminha,setProbleminha] = useState('')
+  const[Probleminha,setProbleminha] = useState('')
   const mudandoDeProbleminha =(e) =>{
-    setTitle(e.probleminha.value)
+    setProbleminha(e.probleminha.value)
   } 
-  const[utimaSerie,setUltimaSerie] = useState('')
-  const mudandoDeUltimaSerie =(e) =>{
-    setTitle(e.ultimaserie.value)
+  const[UtimaSerie,setUtimaSerie] = useState('')
+  const mudandoDeUtimaSerie =(e) =>{
+    setUtimaSerie(e.ultimaserie.value)
   }
 
-  const[ultimoJogo,setUltimoJogo] = useState('')
+  const[UltimoJogo,setUltimoJogo] = useState('')
   const mudandoDeUltimoJogo =(e) =>{
-    setTitle(e.ultimoJogo.value)
+    setUltimoJogo(e.ultimoJogo.value)
   }
 
-   const[musica,setMusica] = useState('')
+   const[Musica,setMusica] = useState('')
   const mudandoDeMusica =(e) =>{
-    setTitle(e.musica.value)
+    setMusica(e.musica.value)
   }
 
-  const[genero,setGenero] = useState('')
+  const[Genero,setGenero] = useState('')
   const mudandoDeGenero =(e) =>{
-    setTitle(e.genero.value)
+    setGenero(e.genero.value)
   }
   const[HabilidadeEspecial,setHabilidadeEspecial] = useState('')
   const mudandoDeHabilidadeEspecial =(e) =>{
-    setTitle(e.HabilidadeEspecial.value)
+    setHabilidadeEspecial(e.HabilidadeEspecial.value)
   }
 
   const[PoderEspecial,setPoderEspecial] = useState('')
   const mudandoDePoderEspecial =(e) =>{
-    setTitle(e.poderEspeciale.value)
+    setPoderEspecial(e.poderEspecial.value)
   }
 
   const[TimeQueTorce,setTimequeTorce] = useState('')
-  const mudandoDetime =(e) =>{
-    setTitle(e.time.value)
+  const mudandoDeTimeQueTorce =(e) =>{
+    setTimequeTorce(e.time.value)
+}
+const[Email,setEmail] = useState('')
+  const mudandoDeEmail =(e) =>{
+    setEmail(e.email.value)
   }
+  const[Senha,setSenha] = useState('')
+  const mudandoDeSenha =(e) =>{
+    setSenha(e.senha.value)
+  }
+useEffect(() => {
+ fetch(`https://api.alanleiser.com/`)
+ .then((response) => response.json())
+ .then(json => console.log(json));
+}, []);
+
+const enviarForms=(e) =>{
+  e.preventDefault();
+  console.log(`email: ${Email}, senha: ${Senha}`);
+
+  <input
+   id='emailId'
+   type='email'
+   name='Email'
+  value={Email}
+  onChange={(e) => mudandoDeEmail(e)}
+  />}
+
   return (
     <>
+
+ <div>
+    <div style={{margin:"10px"}}>
+      <label htmlFor='emailId'>E-mail </label>
+      <input className='caixa' id='emailId' type='email' name='Email' placeholder="Digite seu e-mail" onChange={(e) => mudandoDeEmail(e)}></input>
+  </div>
+  <div style={{margin:"10px"}}>
+      <label htmlFor='senhaId'>Senha </label>
+      <input className='caixa' id='senhaId' type='password' name='Senha' placeholder="Senha" onChange={(e) => mudandoDeSenha(e)}></input>
+  </div>
+</div>
+    
     <div className='Form'>
     <div className='formulario'>
 
@@ -155,7 +194,7 @@ function App() {
 
     <div style={{margin:"10px"}}> 
       <label htmlFor='TimequeTorceId'>Time que Torce </label>
-      <input className='caixa' id='TimequeTorceId' type='text' name='timequeTorce'  placeholder='Ex:Cruzeiro, Flamengo,Etc; 'onChange={(e) => mudandoDetime (e)}></input>
+      <input className='caixa' id='TimequeTorceId' type='text' name='timequeTorce'  placeholder='Ex:Cruzeiro, Flamengo,Etc; 'onChange={(e) => mudandoDeTimeQueTorce (e)}></input>
     </div>
     </div>
 
@@ -166,5 +205,4 @@ function App() {
     </>
   )
 }
-
 export default App
