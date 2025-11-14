@@ -97,10 +97,40 @@ const enviarForms=(e) =>{
   onChange={(e) => mudandoDeEmail(e)}
   />}
 
+ const onSubimitform = () => {
+  console.log('name')
+  const body = {
+  name:Email ,
+  // age:idade  ,
+  phone:Telefone ,
+  instagram:Instagram ,
+  github: GitHub,
+  thought: Pensamento,
+  problem:Probleminha,
+  lastSeries: UtimaSerie ,
+  lastGame: UltimoJogo,
+  music: Musica,
+  genre: Genero,
+  specialSkill: HabilidadeEspecial,
+  specialPower: PoderEspecial,
+  favoriteTeam:TimeQueTorce,
+  // bibleVerse: Versiculo, 
+  email: Email,
+  password:Senha, 
+}
+  fetch('https://api.alanleiser.com/user'),{
+    method:"Post"
+    Headers
+  }
+  }
+
+
+ 
   return (
     <>
+  
 
- <div>
+    <form onSubmit={onSubimitform}>   
     <div style={{margin:"10px"}}>
       <label htmlFor='emailId'>E-mail </label>
       <input className='caixa' id='emailId' type='email' name='Email' placeholder="Digite seu e-mail" onChange={(e) => mudandoDeEmail(e)}></input>
@@ -109,7 +139,8 @@ const enviarForms=(e) =>{
       <label htmlFor='senhaId'>Senha </label>
       <input className='caixa' id='senhaId' type='password' name='Senha' placeholder="Senha" onChange={(e) => mudandoDeSenha(e)}></input>
   </div>
-</div>
+  <button>Entrar</button>
+</form> 
     
     <div className='Form'>
     <div className='formulario'>
